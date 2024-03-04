@@ -1,0 +1,39 @@
+<%= form_with model: article do |form| %>
+  <br>
+  <div>
+    <%= form.label :title, class: "italic text-2xl underline" %><br>
+    <%= form.text_field :title, class: "border border-black rounded-2xl h-12 w-80" %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message   %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :body, class: "italic text-2xl underline" %><br>
+    <%= form.text_area :body, class: "border border-black rounded-2xl w-80" %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+  <div>
+    <%= form.label :status, class: "italic text-2xl underline" %>
+    <br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public', class: "border" %>
+  </div>
+
+  <br>
+
+  <%= form.file_field :image %>
+
+  <br>
+
+  <br>
+
+  <div class="border border-blue-800 border-4 rounded-full py-2 px-4 w-40" style="box-shadow:2px 6px 6px 6px;">
+    <%= form.submit %>
+  </div>
+
+  
+<% end %>

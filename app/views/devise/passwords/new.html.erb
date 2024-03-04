@@ -1,0 +1,36 @@
+
+<body class="  flex items-center justify-center h-screen" style="background-color: #ece4db ">
+
+<div class="border border-4 rounded-2xl -mt-20  " style="color:#023047 ; width: 600px; height: 500px; background-color: transparent ; margin-left: auto; margin-right: auto;border-color:#023e8a; box-shadow:20px 20px 20px 20px;  ">
+
+<div class="border border-4 rounded-2xl -mt-3" style="border-color: #00b4d8;color:#023047 ;width: 615px; height: 515px;margin-left: -2%; margin-rigth:auto ;">
+<div class="border border-4 rounded-2xl" style="border-color: #0077b6; height:508px"> 
+
+    <h2 class="text-center mt-10 italic" style=" font-size:40px">Forgot your password ? </h2>
+    <br>
+    <br>
+    <div style="margin-left:20%;  ">
+
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email, class:"text-xl " %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "border border-2 border-black rounded-xl h-10 text-black"%>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" , class:"text-lg "%>
+  </div>
+<% end %>
+<br>
+
+
+<%= render "devise/shared/links" %>
+
+</div>
+</div>
+</div>
+
+</body>

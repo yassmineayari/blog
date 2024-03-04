@@ -1,0 +1,65 @@
+
+<body style="background-color: #f4f3ee;">
+
+  <div class="flex flex-col items-stretch w-full">
+
+    <nav class="flex justify-between items-center py-4 bg-yellow-800 -mt-32 rounded-3xl text-white w-full h-40">
+    <div class="flex items-center">
+
+    <% if current_user.profile_picture.attached? %>
+    <%= image_tag current_user.profile_picture, alt: 'Image de profil', class: "rounded-full w-28 h-28" %>
+    <% else %>
+      <%= image_tag('profile.jpg', alt: 'Image par défaut', class: "rounded-full") %>
+    <% end %>
+    
+      </div>
+      
+      <% if user_signed_in?  %>
+    
+      <div class="text-white -ml-60 text-3xl italic" style="font-family: 'URW Chancery L', cursive;">
+        <%= "#{current_user.username} #{current_user.last_name}"%>
+      </div>
+      <div class="mr-6"style=" min-width:65px;">
+      <%= link_to "Welcome ", welcome_path, class: "border border-white rounded-full py-2 px-4 text-white" %>
+      </div>
+
+      <div class="mr-6"style=" min-width:65px;">
+      <%= link_to "Home", home_path, class: "border border-white rounded-full py-2 px-4 text-white" %>
+    </div>
+    
+      <div class="mr-6"style=" min-width:120px;">
+      <%= link_to "About Us", about_me_path, class: "border border-white rounded-full py-2 px-4 text-white" %>
+      </div>
+      <%end%>
+    </nav>
+
+
+<br>
+
+<div style="" >
+<%= image_tag('blaka.png', alt: 'Image de livre',class:' mx-auto md:-ml-60', style:'margin-left:auto; width:533px') %>
+</div>
+
+
+<div class="border border-black border-4 rounded-2xl mx-auto " style="width: 400px; max-width: 580px; height:500px; box-shadow: 5px 5px 15px 5px; background-color: #faedcd;margin-top:-650px">
+<div class="flex flex-col items-center justify-center h-full">
+  <h1 class="text-black text-3xl italic" style="font-family: 'URW Chancery L', cursive;margin-left:-60px; margin-top:-90px " > Created by:</h1>  <br><br>
+  <h1 class="text-black text-3xl text-left italic" style="font-family: 'URW Chancery L', cursive;"> Yassmine Ayari <br> A software <br> engineering student </h1>
+</div>
+</div>
+
+
+
+<div >
+<%= image_tag('richa.png', alt: 'Image de livre',class:'w-96 mx-auto rounded-xl ', style:'margin-left:20px; margin-top:-186px') %>
+</div>
+
+
+<div class="w-60 " style="margin-left:50%; margin-top:-185px">
+<%= image_tag('tompony.png', alt: 'Image de livre',class:'w-96 mx-auto rounded-xl ', style:'margin-left:20px; margin-top:-186px') %>
+</div>
+
+
+  </div>
+
+  </body>
